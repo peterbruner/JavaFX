@@ -11,9 +11,9 @@
    <children>
       <HBox prefHeight="23.0" prefWidth="600.0">
          <children>
-            <TextField fx:id="name" promptText="Name" />
-            <TextField fx:id="phone" promptText="Phone #" />
-            <TextField fx:id="email" promptText="Email" />
+            <TextField fx:id="name" minWidth="-Infinity" promptText="Name" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="phone" minWidth="-Infinity" promptText="Phone #" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="email" minWidth="-Infinity" promptText="Email" HBox.hgrow="ALWAYS" />
             <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#addItem" text="Add" />
             <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#removeItem" text="Remove" />
          </children>
