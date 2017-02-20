@@ -14,26 +14,37 @@ public class Controller implements Initializable {
     ObservableList<Contact> contacts = FXCollections.observableArrayList();
 
     @FXML
-    TextField text;
-    //dont need an @FXML for each instance of TextField, because the type is already handleds
+    TextField name;
+
+    @FXML
+    TextField phone;
+
+    @FXML
+    TextField email;
 
     @FXML
     ListView list;
 
     public void addItem() {
-        System.out.println("addItem");
+        contacts.add(new Contact(name.getText(), phone.getText(), email.getText()));
+        name.setText("");
+        phone.setText("");
+        email.setText("");
     }
 
     public void removeItem() {
-        System.out.println("removeItem");
+        Contact contactoid = (Contact) list.getSelectionModel().getSelectedItem();
+        contacts.remove(contactoid);
     }
 
     //implements Initializable (from public class Controller implements Initializable)
     //made the whole signature red, saying Class 'Controller' must either be declared
     //abstract or implement abstract method 'initialize(URL, ResourceBundle)' in 'Initializable'
     //solution was to add the below statement
+    //.setItems is a method from ListView, to make it use contacts, and its all inside the
+    //initialize method
 
     public void initialize(URL location, ResourceBundle resources) {
-        list.setContacts(contacts);
+        list.setItems(contacts);
     }
 }

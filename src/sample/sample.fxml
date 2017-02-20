@@ -11,11 +11,11 @@
    <children>
       <HBox prefHeight="23.0" prefWidth="600.0">
          <children>
-            <TextField promptText="Name" />
-            <TextField promptText="Phone #" />
-            <TextField promptText="Email" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" text="Add" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" text="Remove" />
+            <TextField fx:id="name" promptText="Name" />
+            <TextField fx:id="phone" promptText="Phone #" />
+            <TextField fx:id="email" promptText="Email" />
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#addItem" text="Add" />
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#removeItem" text="Remove" />
          </children>
       </HBox>
       <ListView fx:id="list" prefHeight="412.0" prefWidth="600.0" />
